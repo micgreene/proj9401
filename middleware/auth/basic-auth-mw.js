@@ -1,7 +1,7 @@
 'use strict';
 
 const base64 = require('base-64');
-const users = require('../../models/users.js');
+const users = require('../../src/models/users.js');
 
 module.exports = (req, res, next) => {
   if(!req.headers.authorization){

@@ -3,9 +3,9 @@
 const express = require('express');
 
 const User = require('../models/users.js');
-const basicAuth = require('../auth/middleware/basic-auth-mw.js');
-const bearerAuth = require('../auth/middleware/bearer-auth-mw.js');
-const acl = require('../auth/middleware/acl-mw.js');
+const basicAuth = require('../../middleware/auth/basic-auth-mw.js');
+const bearerAuth = require('../../middleware/auth/bearer-auth-mw.js');
+const acl = require('../../middleware/auth/acl-mw.js');
 
 const authRoute = express.Router();
 
