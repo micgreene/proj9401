@@ -1,6 +1,6 @@
 # LAB - Class 09
 
-## Project: Authentication Server
+## Project: Authentication Module Final Project
 
 ### Authors:
 - Kale Lesko
