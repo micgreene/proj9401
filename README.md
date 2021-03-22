@@ -25,7 +25,7 @@
 - `MONGODB_URI` - mongodb://localhost:27017/auth2
 - `SECRET_CODE` - 'dawg'
 
-#### How to initialize/run your application (where applicable)
+#### How to initialize/run your application 
 
 - `npm start`
 
