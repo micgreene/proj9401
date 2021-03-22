@@ -15,7 +15,7 @@
 
 ### Links and Resources
 
-- [back-end server url]()
+- [back-end server url](http://localhost:3000)
 
 ### Setup
 
@@ -29,13 +29,6 @@
 
 - `npm start`
 
-#### How to use your library (where applicable)
-
 #### UML
 
 ![UML Example](./reference/uml-1.png)
-
-## Auth Module Final Project
-
-### Team Members:
-
