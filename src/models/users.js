@@ -20,6 +20,15 @@ users.virtual('token').get(function(){
   return jwt.sign(token, SECRET_CODE);
 });
 
+users.virtual('capabilities').get(function(){
+  let acl ={
+    user: ['read'],
+    editor: ['read', 'create', 'update'],
+    admin: ['read', 'create', 'update', 'delete']
+  }
+  return acl[this.role];
+})
+
   users.pre('save', async function(){
     this.password = await bcrypt.hash(this.password, 5);
   });
@@ -31,8 +40,18 @@ users.virtual('token').get(function(){
     if(valid) { return user; }
 
     throw new Error('invalid username or password');
+  }
 
+  users.statics.authenticateToken = async function(token){
+    try{
+      const parsed = await jwt.verify(token, SECRET_CODE);
+      const user = await this.findOne({username: parsed.username})
 
+      if(user) return user;
+      throw new Error('User not found!');
+    } catch(e){
+      throw new Error(e.message);
+    }
   }
 
   module.exports = mongoose.model('users', users);

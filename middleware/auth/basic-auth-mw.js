@@ -5,7 +5,7 @@ const users = require('../../src/models/users.js');
 
 module.exports = (req, res, next) => {
   if(!req.headers.authorization){
-    next('not authroized');
+    next('missing authorization header!');
     return;
   }
 
